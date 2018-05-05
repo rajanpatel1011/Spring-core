@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="
-http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
-<bean id="obj" class="com.org.Aadhar"></bean>
-
-
+	<bean id = "cust" class = "com.org.Customer">
+		<property name="account" ref = "acc" ></property>
+	</bean>
+	
+	<bean id = "acc" class = "com.org.Account">
+	</bean>
+	
+	<bean id = "bank1" class = "com.org.Bank">
+		<!-- <property name = "customer" ref = "cust"></property>
+		<property name = "bankName" value = "HDFC"></property> -->
+		<constructor-arg name="customer" ref = "cust"></constructor-arg>
+		<constructor-arg name = "bankName" value = "HDFC Bank"></constructor-arg>
+		
+	</bean>
+	
+	<!-- <bean id = "obj" class = "com.org.Aadhar"></bean> -->
 </beans>
