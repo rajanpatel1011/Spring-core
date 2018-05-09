@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+
+<bean id="account" class="autowiring.Account">
+ 	<property name="accountNumber" value="21122112"></property>
+</bean>
+
+<bean id="address" class="autowiring.Address">
+<property name="city" value="Surat"></property>
+</bean>
+
+<bean id="customer" class="autowiring.Customer" autowire="byName">
+ 	<property name="customerName" value="rajan"></property>
+ <!--  	<property name="address" ref="addressBean"></property>
+ 	<property name="account" ref="accountBean"></property>
+-->
+</bean>
+</beans>
