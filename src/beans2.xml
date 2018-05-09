@@ -9,4 +9,55 @@
 <bean id="emp" class="com.org.Employee" lazy-init="true" scope="prototype">
 <property name="companyName" value="IBM"></property></bean>
 
+<bean id="airtel4g" class="com.org.TelecomServices" >
+<property name="Location">
+<list>
+  <value>Bangluru</value>
+  <value>Hyderabad</value>
+  <value>Chennai</value>
+</list>
+</property>
+
+
+<property name="url">
+<set>
+ 	<value>www.airtel.in</value>
+</set></property>
+
+
+<property name="credentials">
+<map>
+ 	<entry key="username">
+ 		<value>Admin</value>
+ 	</entry>
+<entry key="password">
+ 	<value>Airtel</value>
+ </entry>
+ </map>
+ </property>
+
+</bean>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<bean id="idea4g" class="com.org.TelecomServices">
+<property name="Location">
+<list>
+<value> Bengluru</value></list>
+</property>
+<property name="url">
+<set>
+<value>www.idea.in</value></set></property>
+</bean>
 </beans>
